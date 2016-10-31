@@ -22,11 +22,10 @@ WORKDIR net-speeder
 RUN sh build.sh
 
 RUN mv net_speeder /usr/local/bin/
-COPY entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/entrypoint.sh
+COPY squidtest.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/squidtest.sh
 RUN chmod +x /usr/local/bin/net_speeder
 
 EXPOSE 3128
 
-# Configure container to run as an executable
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/squidtest.sh"]
