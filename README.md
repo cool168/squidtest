@@ -1,0 +1,2 @@
+# squidtest
+test for squid
